@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #2ba2116c;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-image: url(c:\Nodeproject\image.png);
+        }
+        h1 {
+            color: rebeccapurple;
+            margin-bottom: 70px;
+            position: relative;
+            animation: a 8s forwards infinite alternate;
+            text-align: center;
+        }
+       /* @keyframes a {
+            0% { left: 0%; }
+            100% { color: blue; left: 70%; }
+        } */
+        .login-container {
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .login-container:hover {
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            transform: scale(1.2);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .login-container button:hover {
+            background: #45a049;
+        }
+    </style>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+<h1>Welcome to Group Discuss Chat App</h1>
+<div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username ">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+    <div id="g_id_onload"
+         data-client_id="209856942919-d4l8af0dc19t38vbillen67ik9mimqgu.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+</div>
+
+<script>
+// function login() {
+//     const user = document.getElementById('username').value;
+//     const pass = document.getElementById('password').value;
+
+//     if (user && pass) {
+//         localStorage.setItem('username', user);
+//         window.location.href = "index.html"; 
+//     } else {
+//         alert('Please fill in both fields');
+//     }
+// }
+function login() {
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value;
+
+    // Validate username (only alphabets)
+    const usernameRegex = /^[A-Za-z]+$/;
+    if (!usernameRegex.test(user)) {
+        alert('Username must contain only alphabets.');
+        return;
+    }
+
+    // Validate password (minimum 6 characters)
+    if (pass.length < 6) {
+        alert('Password must be at least 6 characters long.');
+        return;
+    }
+
+    // If validation passes, store username and redirect
+    localStorage.setItem('username', user);
+    window.location.href = "index.html"; 
+}
+
+function logout() {
+    localStorage.removeItem('username'); 
+    window.location.href = "login.html"; 
+}
+
+// Handle Google Sign-In response
+function handleCredentialResponse(response) {
+    const data = jwt_decode(response.credential);
+    console.log("User Info:", data);
+    localStorage.setItem('username', data.name); // Store Google username
+    window.location.href = "index.html"; // Redirect to chat page
+}
+
+// Load JWT decoder library
+function loadJwtDecoder() {
+    const script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js";
+    document.head.appendChild(script);
+}
+loadJwtDecoder();
+</script>
+</body>
+</html>

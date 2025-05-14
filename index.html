@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disscus chat app </title>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+
+    <script defer src="client.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Redirect to login.html if the user is not logged in
+        if (!localStorage.getItem('username')) {
+            window.location.href = "login.html";
+        }
+        window.addEventListener('beforeunload', () => {
+            localStorage.removeItem('username');
+        });
+    </script>
+</head>
+
+<body>
+    <img class="logo" src="Chat-Icon-PNG-HD-Quality.png" alt="">
+    <h1>Welcome to group discuss chat app</h1>
+    <nav>
+        <div id="container">
+            <!-- <div class="message right">Ritul: hey how are you</div>
+            <div class="message left">Harsh: I am fine.how about you</div> -->
+
+            <!-- <button onclick="changeColor()" class="y">Change moder</button> -->
+        </div>
+        <div class="send">
+            <form action="#" id="send-conatineer">
+                <input type="text" name="messageinp" id="messageinp" placeholder="Message" required>
+
+
+                <div class="chat-input">
+
+                    <label for="file-input" style="cursor: pointer;">
+                        <img src="download.png" class="icon" alt="">
+                    </label>
+                    <input type="file" id="file-input" class="file-input" accept="image/*">
+                </div>
+                <button class="btn" type="submit">Send</button>
+            </form>
+            <button onclick="toggleNightMode()" class="night">Toggle Night Mode</button>
+        </div>
+    </nav>
+
+
+
+</body>
+
+</html>

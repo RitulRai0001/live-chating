@@ -1,0 +1,191 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.logo {
+   display: block;
+   margin: auto;
+   height: 50px;
+   width: 50px;
+
+
+}
+
+h1 {
+   font-family: 'Courier New', Courier, monospace;
+   font-size: 30px;
+   margin-top: 12px;
+   text-align: center;
+   
+
+}
+
+body {
+   height: 100vh;
+   background: linear-gradient(90deg in, rgb(4 0 255), rgb(26 55 134 / 45%));
+}
+
+#container {
+   max-width: 955px;
+   border: 3px solid black;
+   margin: auto;
+   border-radius: 13px;
+   height: 60vh;
+   padding: 33px;
+   overflow-y: auto;
+   /* margin-bottom: 20px; */
+   background-image: url(imag.png);
+   box-shadow: 20px 30px 30px blue;
+
+}
+
+#send-conatineer {
+   /* margin-top: 20PX; */
+   display: block;
+   margin: auto;
+   text-align: center;
+   max-width: 1100px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.message {
+   background-color: #FFEBEE;
+   width: 30%;
+   padding: 10px;
+
+   font-weight: 100;
+
+   margin: 17px 12px;
+   border: 2px solid black;
+   border-radius: 10px;
+
+
+
+
+
+}
+
+.right {
+   float: right;
+   clear: both;
+   font-size: 20px;
+   /* border: none; */
+   border: none;
+   background-color: #4CAF50;
+   box-shadow: 5px 5px 5px black;
+}
+
+
+.left {
+   float: left;
+   clear: both;
+   background-color:  #F44336;
+   color: white;
+   font-size: 20px;
+   /* border: none; */
+   box-shadow: 5px 5px 5px black;
+
+}
+
+#messageinp {
+   width: 75%;
+   border: none;
+   /* border: 2px solid black; */
+   /* border-radius: 6px; */
+   height: 34px;
+   font-size: 22px;
+
+}
+
+.btn {
+   margin: 0 5px;
+   width: 11%;
+   cursor: pointer;
+   border: 2px solid black;
+   border-radius: 6px;
+   height: 34px;
+
+   background-color: blueviolet;
+
+
+
+}
+
+.btn:hover {
+   background-color: green;
+}
+.chat-input .file-input {
+   display: none; 
+ }
+ .icon{
+   margin-top: 11%;
+   height: 34px;
+   width: 30px;
+   /* border-radius: 15PX; */
+   /* position: absolute;
+   left: 70%;
+   top: 83%; */
+ }
+ .y{
+   margin-top: 20px;
+   padding: 10px 20px;
+   font-size: 16px;
+   cursor: pointer;
+   background-color: #4CAF50;
+   color: white;     
+   border: none;
+   border-radius: 5px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   transition: background-color 0.3s ease;
+   position: absolute;
+   bottom: 20px;
+   right: 20px;
+ }
+/* Default Light Mode */
+body {
+   
+
+   background: linear-gradient(90deg in, rgb(4 0 255), rgb(26 55 134 / 45%));
+}
+
+/* Night Mode */
+body.night-mode {
+   background-color: #121212;
+   color: white;
+}
+
+/* Additional Night Mode Styling */
+.night-mode .y {
+   background-color: #333;
+   color: white;
+   border: 1px solid white;
+}
+
+.night-mode input,
+.night-mode button {
+   background-color: #333;
+   color: white;
+   border: 1px solid white;
+}
+.night{
+   position: absolute;
+   top: 16%;
+   left: 17%;
+   
+
+
+}
+
+
+
+body {
+   height: 100vh;
+   background: linear-gradient(90deg, rgb(4, 0, 255), rgba(26, 55, 134, 0.45));
+}
+
+
+
